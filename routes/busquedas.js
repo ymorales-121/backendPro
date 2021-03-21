@@ -2,12 +2,12 @@
 
 const {Router} = require('express');
 const {getTodo,getDocumentosColeccion} = require('../controllers/busquedas');
-const {validatJWT} = require('../middlewares/validat-jwt');
+const {validarJWT} = require('../middlewares/validat-jwt');
 const router = Router();
 
 
-router.get('/:busqueda',validatJWT,getTodo);
+router.get('/:busqueda',validarJWT,getTodo);
 
-router.get('/coleccion/:tabla/:busqueda',validatJWT,getDocumentosColeccion);
+router.get('/coleccion/:tabla/:busqueda',validarJWT,getDocumentosColeccion);
 
 module.exports = router;
